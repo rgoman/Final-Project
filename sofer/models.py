@@ -21,9 +21,6 @@ class Sofer(models.Model):
     gender = models.CharField(choices=gender_options,max_length=6)
     camion = models.ForeignKey(Camion, on_delete=models.CASCADE, null=True)
     profile = models.ImageField(upload_to='profiles/', null=True)
-
-    #profile = models.FileField
-
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
