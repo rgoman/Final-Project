@@ -23,7 +23,7 @@ from camion.models import Camion
 
 
 class CamionCreateView(CreateView):
-    template_name = 'lista_camioane/add_truck.html'
+    template_name = 'camion/add_truck.html'
     model = Camion
     form_class = CamionForm
     success_url = reverse_lazy('home')

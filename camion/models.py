@@ -12,13 +12,13 @@ class Camion(models.Model):
     #     ('female', 'Female')
     # )
 
-    license_plate = models.CharField(max_length=10)
-    vin_nr = models.CharField(max_length=17)
-    actual_odometer = models.IntegerField()
+    numar_inmatriculare = models.CharField(max_length=10)
+    serie_sasiu = models.CharField(max_length=17)
+    kilometraj_actual = models.IntegerField()
     #email = models.EmailField(max_length=50)
     #description = models.TextField(max_length=500)
-    first_registration = models.DateField()
-    technical_inspection_valid_to = models.DateField()
+    prima_inmatriculare = models.DateField()
+    ITP_valabil_pana_la = models.DateField()
     # active = models.BooleanField(default=True)
     # gender = models.CharField(choices=gender_options,max_length=6)
     # trainer = models.ForeignKey(Trainer, on_delete=models.CASCADE, null=True)
@@ -33,4 +33,4 @@ class Camion(models.Model):
     #auto_now - folosit pentru a stoca data si ora de fiecare data cand se modifica date pe inregistrare.
 
     def __str__(self):
-        return f'{self.license_plate} {self.vin_nr} {self.technical_inspection_valid_to}'
+        return f'{self.numar_inmatriculare} {self.serie_sasiu} {self.ITP_valabil_pana_la}'
