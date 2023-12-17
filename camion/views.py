@@ -23,26 +23,27 @@ from camion.models import Camion
 
 
 class CamionCreateView(CreateView):
-    template_name = 'camion/add_truck.html'
+    template_name = 'camion/adaugare_camion.html'
     model = Camion
     form_class = CamionForm
     success_url = reverse_lazy('home')
 
-# class TrainerListView(LoginRequiredMixin, ListView):
-#     template_name = 'trainer/list_of_trainers.html'
-#     model = Trainer
-#     context_object_name = 'all_trainers'
-#
+class CamionListView(ListView):
+    template_name = 'camion/lista_camioane.html'
+    model = Camion
+    context_object_name = 'toate_camioanele'
+
 # class TrainerUpdateView(LoginRequiredMixin, UpdateView):
 #     template_name = 'trainer/update_trainer.html'
 #     model = Trainer
 #     form_class = TrainerUpdateForm
 #     success_url = reverse_lazy('list-of-trainers')
-#
-# class TrainerDeleteView(LoginRequiredMixin, DeleteView):
-#     template_name = 'trainer/delete_trainer.html'
-#     model = Trainer
-#     success_url = reverse_lazy('list-of-trainers')
+
+class CamionDeleteView(DeleteView):
+    template_name = 'camion/stergere_camion.html'
+    model = Camion
+    success_url = reverse_lazy('lista-camioane')
+
 # @login_required()
 # def activate_trainer(request, pk):
 #     Trainer.objects.filter(id=pk).update(active=True)

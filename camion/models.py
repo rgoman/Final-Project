@@ -19,6 +19,7 @@ class Camion(models.Model):
     #description = models.TextField(max_length=500)
     prima_inmatriculare = models.DateField()
     ITP_valabil_pana_la = models.DateField()
+    asigurare_valabila_pana_la = models.DateField(auto_now=True)
     # active = models.BooleanField(default=True)
     # gender = models.CharField(choices=gender_options,max_length=6)
     # trainer = models.ForeignKey(Trainer, on_delete=models.CASCADE, null=True)
@@ -26,11 +27,11 @@ class Camion(models.Model):
 
     #profile = models.FileField
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    creeat_la = models.DateTimeField(auto_now_add=True)
+    actualizat_la = models.DateTimeField(auto_now=True)
 
     #auto_now_add - folosti pt a stoca data si ora la momentul introducerii. Nu se mai modifica
     #auto_now - folosit pentru a stoca data si ora de fiecare data cand se modifica date pe inregistrare.
 
     def __str__(self):
-        return f'{self.numar_inmatriculare} {self.serie_sasiu} {self.ITP_valabil_pana_la}'
+        return f'{self.numar_inmatriculare}'

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load  static %}
+{% block title %} Lista camioanelor {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            {% for camion in toate_camioanele %}
+                <div class="col-xl-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Nr inmatriculare: {{ camion.numar_inmatriculare }}, KM actual: {{camion.kilometraj_actual }} </h5>
+                        <p class="card-text">Seria de sasiu: {{ camion.serie_sasiu }}</p>
+                        <p class="card-text">Prima inmatriculare: {{ camion.prima_inmatriculare }}</p>
+                        <p class="card-text">ITP Valabil pana la: {{ camion.ITP_valabil_pana_la }}</p>
+{#                        <p class="card-text">#}
+{#                            Active:#}
+{#                            {% if trainer.active %}#}
+{#                                Yes#}
+{#                            {% else %}#}
+{#                                No#}
+{#                            {% endif %}#}
+{#                        </p>p#}
+                        <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                       more actions
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Update</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'stergere-camion' camion.id %}">Delete</a></li>
+{#                                        <li><a class="dropdown-item" href="{% url 'detail-trainer' trainer.id %}">View details</a></li>#}
+{#                                        {% if trainer.active is False %}#}
+{#                                            <li><a class="dropdown-item" href="{% url 'activate-trainer' trainer.id %}">Activate</a></li>#}
+{#                                        {% else %}#}
+{#                                            <li><a class="dropdown-item" href="{% url 'inactivate-trainer' trainer.id %}">Inactivate</a></li>#}
+{#                                        {% endif %}#}
+                                    </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

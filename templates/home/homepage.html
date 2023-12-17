@@ -6,11 +6,47 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <img src="{% static 'images/img1.png' %}" alt="xSpedition">
+                <img src="{% static 'images/img.png' %}" alt="xSpedition">
             </div>
-             <footer>
-                <p>&copy; 2023 Administrarea Flotei de Camioane</p>
-             </footer>
+                <body>
+                    <div class="container">
+                        <h2>Top KM</h2>
+                            <div class="col-md-6 offset-md-3">
+                                <div>
+                                    <canvas id="myChart"></canvas>
+                                </div>
+                            </div>
+                    </div>
+                </body>
+                <script>
+                    let ctx = document.getElementById("myChart").getContext("2d");
+                    let myChart = new Chart(ctx, {
+                        type: "line",
+                        data: {
+                            labels: [
+                                "Monday",
+                                "Tuesday",
+                                "Wednesday",
+                                "Thursday",
+                                "Friday",
+                                "Saturday",
+                                "Sunday",
+                            ],
+                            datasets: [
+                                {
+                                   label: "work load",
+                                   data: [2, 9, 3, 17, 6, 3, 7],
+                                   backgroundColor: "rgba(153,205,1,0.6)",
+                                },
+                                {
+                                    label: "free hours",
+                                 data: [2, 2, 5, 5, 2, 1, 10],
+                                 backgroundColor: "rgba(155,153,10,0.6)",
+                                },
+                            ],
+                        },
+                    });
+                </script>
         </div>
     </div>
 {% endblock %}

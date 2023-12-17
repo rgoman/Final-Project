@@ -10,11 +10,12 @@ class CamionForm(forms.ModelForm):
         fields = '__all__'
 
         widgets ={
-            'license_plate': TextInput(attrs={'class': 'form-control','placeholder': 'Va rugam sa introduceti numarul de inmatriculare'}),
-            'vin_nr': TextInput(attrs={'class': 'form-control','placeholder': 'Va rugam sa introduceti seria de sasiu'}),
-            'actual_odometer': NumberInput(attrs={'class': 'form-control','placeholder': 'Va rugam sa introduceti kilometrajul masinii'}),
-            'first_registration': DateInput(attrs={'class': 'form-control', 'type': 'date'}),
-            'technical_inspection_valid_to': DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'numar_inmatriculare': TextInput(attrs={'class': 'form-control','placeholder': 'Va rugam sa introduceti numarul de inmatriculare'}),
+            'serie_sasiu': TextInput(attrs={'class': 'form-control','placeholder': 'Va rugam sa introduceti seria de sasiu'}),
+            'kilometraj_actual': NumberInput(attrs={'class': 'form-control','placeholder': 'Va rugam sa introduceti kilometrajul masinii'}),
+            'prima_inmatriculare': DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'ITP_valabil_pana_la': DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            #'asigurare_valabila_pana_la': DateInput(attrs={'class': 'form-control', 'type': 'date'}),
 
         }
 
