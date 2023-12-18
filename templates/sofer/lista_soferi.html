@@ -1,10 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load  static %}
+{% block title %} List of students {% endblock %}
 
-</body>
-</html>
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Fotografie</th>
+                        <th>Prenume</th>
+                        <th>Nume</th>
+                        <th>Varsta</th>
+                        <th>Data Incepere</th>
+{#                        <th>Active</th>#}
+                        <th>Gender</th>
+{#                        <th>Created at</th>#}
+                        <th>Camionul</th>
+{#                        <th>Name of course</th>#}
+{#                        <th>Name of department</th>#}
+                        <th>Ultima modificare</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for sofer in toti_soferii %}
+                        <tr>
+                            <td>
+                                {% if sofer.profile %}
+                                    <img src="{{ sofer.profile.url }}", width="60" height="60" alt="profile">
+
+                                {% else %}
+                                    <img src="{% static 'images/img_1.png' %}", width="60", height="60" alt="default image">
+
+                                {% endif %}
+                            </td>
+                            <td>{{ sofer.prenume }}</td>
+                            <td>{{ sofer.nume }}</td>
+                            <td>{{ sofer.numar_de_telefon }}</td>
+                            <td>{{ sofer.data_incepere|date:"d-m-Y" }}</td>
+                            <td>{{ sofer.gender|title }}</td>
+                            {# title, upper, lower #}
+                            <td>
+                                {% if sofer.camion %}
+                                    {{ sofer.camion }}
+                                {% else %}
+                                    Fara masina
+                                {% endif %}
+                            </td>
+                            <td>{{ sofer.updated_at|date:"d-m-Y H:i:s" }}</td>
+
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                       more actions
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Update</a></li>
+                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+{#                                        <li><a class="dropdown-item" href="{% url 'detail-student' student.id %}">View details</a></li>#}
+                                    </ul>
+                                </div>
+                            </td>
+
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

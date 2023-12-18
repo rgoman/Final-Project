@@ -19,7 +19,7 @@ class Camion(models.Model):
     #description = models.TextField(max_length=500)
     prima_inmatriculare = models.DateField()
     ITP_valabil_pana_la = models.DateField()
-    asigurare_valabila_pana_la = models.DateField(auto_now=True)
+    asigurare_valabila_pana_la = models.DateField()
     # active = models.BooleanField(default=True)
     # gender = models.CharField(choices=gender_options,max_length=6)
     # trainer = models.ForeignKey(Trainer, on_delete=models.CASCADE, null=True)

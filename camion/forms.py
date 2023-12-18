@@ -15,7 +15,7 @@ class CamionForm(forms.ModelForm):
             'kilometraj_actual': NumberInput(attrs={'class': 'form-control','placeholder': 'Va rugam sa introduceti kilometrajul masinii'}),
             'prima_inmatriculare': DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'ITP_valabil_pana_la': DateInput(attrs={'class': 'form-control', 'type': 'date'}),
-            #'asigurare_valabila_pana_la': DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'asigurare_valabila_pana_la': DateInput(attrs={'class': 'form-control', 'type': 'date'}),
 
         }
 

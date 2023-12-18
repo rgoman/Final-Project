@@ -29,11 +29,11 @@
                        <ul class="dropdown-menu">
 {#                           {% if perms.app_label.codename %} {% endif %}#}
 {#                           {% if perms.student.add_student %}#}
-                           <li><a class="dropdown-item" href="#">Adauga un sofer nou</a></li>
+                           <li><a class="dropdown-item" href="{% url 'adaugare-sofer' %}">Adauga un sofer nou</a></li>
 {#                           {% endif %}#}
 
 {#                           {% if perms.student.view_list_of_students %}#}
-                           <li><a class="dropdown-item" href="#">Lista cu soferi</a></li>
+                           <li><a class="dropdown-item" href="{% url 'lista-soferi' %}">Lista cu soferi</a></li>
 {#                           {% endif %}#}
                        </ul>
                     </li>
